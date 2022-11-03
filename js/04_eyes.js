@@ -200,10 +200,14 @@ function handleInput() {
             ]
         } else {
             const rects = range.getClientRects();
-            return [
-                rects[0].left,
-                rects[0].top
-            ]
+            if (rects[0]) {
+                return [rects[0].left, rects[0].top]
+            } else {
+                document.execCommand('selectAll', false, null);
+                return [
+                    0, 0
+                ]
+            }
         }
     }
 }
