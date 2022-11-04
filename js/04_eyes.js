@@ -7,7 +7,7 @@ const containerEl = document.querySelector('.container');
 const textInputEl = document.querySelector('#text-input');
 
 // Settings
-const fontName = 'helvetica';
+const fontName = 'Verdana';
 const textureFontSize = 30;
 const fontScaleFactor = .15;
 
