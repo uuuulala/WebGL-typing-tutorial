@@ -214,13 +214,12 @@ function handleInput() {
 
 // ---------------------------------------------------------------
 
-let lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-
 function render() {
     requestAnimationFrame(render);
     updateParticlesMatrices();
     updateCursorOpacity();
 
+    let lerp = (start, end, amt) => (1 - amt) * start + amt * end;
     intersect.x = lerp(intersect.x, intersectTarget.x, .1);
     intersect.y = lerp(intersect.y, intersectTarget.y, .1);
 
@@ -333,7 +332,7 @@ function Particle([x, y]) {
     this.toDelete = false;
 
     this.scale = 0;
-    this.maxScale = 15 * (.3 + Math.pow(Math.random(), 3));
+    this.maxScale = 20 * (.2 + Math.pow(Math.random(), 5));
     this.deltaScale = 1;
 
     this.grow = function () {
