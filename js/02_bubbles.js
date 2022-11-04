@@ -195,7 +195,6 @@ function refreshText() {
         let p = (c.old && particles[cIdx]) ? particles[cIdx] : new Particle([x, y]);
         if (c.toDelete) {
             p.toDelete = true;
-            p.scale = 1;
         }
         return p;
     });
