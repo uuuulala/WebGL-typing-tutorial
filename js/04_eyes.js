@@ -7,14 +7,15 @@ const containerEl = document.querySelector('.container');
 const textInputEl = document.querySelector('#text-input');
 
 // Settings
-const fontName = 'Verdana';
-const textureFontSize = 30;
+const fontName = 'system-ui';
+const textureFontSize = 50;
 const fontScaleFactor = .15;
 
 // We need to keep the style of editable <div> (hidden inout field) and canvas
 textInputEl.style.fontSize = textureFontSize + 'px';
 textInputEl.style.font = '100 ' + textureFontSize + 'px ' + fontName;
 textInputEl.style.lineHeight = 1.1 * textureFontSize + 'px';
+textInputEl.style.fontWeight = 100;
 
 // 3D scene related globals
 let scene, camera, renderer, textCanvas, textCtx, particleGeometry, particleMaterial, instancedMesh, dummy, clock, cursorMesh;
@@ -23,7 +24,7 @@ let intersect = new THREE.Vector3(10, 3, 7);
 let intersectTarget = intersect.clone();
 
 // String to show
-let string = "Looking<div>good!</div>";
+let string = "Gaze";
 
 // Coordinates data per 2D canvas and 3D scene
 let textureCoordinates = [];
@@ -93,8 +94,8 @@ function init() {
     dummy = new THREE.Object3D();
     clock = new THREE.Clock();
 
-    const cursorGeometry = new THREE.BoxGeometry(.09, 4.5, .03);
-    cursorGeometry.translate(0, -2.7, 0)
+    const cursorGeometry = new THREE.BoxGeometry(.09, 6, .03);
+    cursorGeometry.translate(0, -4.3, 0)
     const cursorMaterial = new THREE.MeshBasicMaterial({
         color: 0x111123,
         transparent: true,

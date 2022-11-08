@@ -1,12 +1,12 @@
 # Typing Effects with Three.js
 
-Demos for the tutorial about typing effects made with WebGL
+Demos for the tutorial on how to create interactive 3D type effects in Three.js.
 
-![Image Title](https://generative-placeholders.glitch.me/image?width=800&height=600")
+![Image Title](https://tympanus.net/codrops/wp-content/uploads/2022/11/3DType.jpg)
 
-[Article on Codrops](https://tympanus.net/codrops/?p=)
+[Article on Codrops](https://tympanus.net/codrops/?p=65590)
 
-[Demo](http://tympanus.net/Development/.../)
+[Demo](http://tympanus.net/Development/3DTypeEffects/)
 
 
 ## Installation

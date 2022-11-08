@@ -19,7 +19,7 @@ textInputEl.style.lineHeight = 1.1 * textureFontSize + 'px';
 let scene, camera, renderer, textCanvas, textCtx, particleGeometry, particleMaterial, instancedMesh, dummy, clock, cursorMesh;
 
 // String to show
-let string = 'Type with<div>clouds</div>';
+let string = 'FLUFFY';
 
 // Coordinates data per 2D canvas and 3D scene
 let textureCoordinates = [];

@@ -6,20 +6,20 @@ const containerEl = document.querySelector('.container');
 const textInputEl = document.querySelector('#text-input');
 
 // Settings
-const fontName = 'Verdana';
-const textureFontSize = 80;
+const fontName = 'system-ui';
+const textureFontSize = 70;
 const fontScaleFactor = .06;
 
 // We need to keep the style of editable <div> (hidden inout field) and canvas
 textInputEl.style.fontSize = textureFontSize + 'px';
 textInputEl.style.font = '100 ' + textureFontSize + 'px ' + fontName;
-textInputEl.style.lineHeight = 1.1 * textureFontSize + 'px';
+textInputEl.style.lineHeight = 1 * textureFontSize + 'px';
 
 // 3D scene related globals
 let scene, camera, renderer, textCanvas, textCtx, particleGeometry, particleMaterial, instancedMesh, dummy, clock, cursorMesh;
 
 // String to show
-let string = 'or with<div>bubbles!</div>';
+let string = 'Bubblerific';
 
 // Coordinates data per 2D canvas and 3D scene
 let textureCoordinates = [];
@@ -81,7 +81,7 @@ function init() {
     clock = new THREE.Clock();
 
     const cursorGeometry = new THREE.BoxGeometry(.12, 4.5, .03);
-    cursorGeometry.translate(.1, -2.2, 0)
+    cursorGeometry.translate(.1, -1.8, 0)
     const cursorMaterial = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         transparent: true,

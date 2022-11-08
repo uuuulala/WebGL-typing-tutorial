@@ -6,21 +6,21 @@ const containerEl = document.querySelector('.container');
 const textInputEl = document.querySelector('#text-input');
 
 // Settings
-const fontName = 'Verdana';
-const textureFontSize = 70;
+const fontName = 'Baskerville';
+const textureFontSize = 100;
 const fontScaleFactor = .085;
 
 // We need to keep the style of editable <div> (hidden inout field) and canvas
 textInputEl.style.fontSize = textureFontSize + 'px';
 textInputEl.style.font = '100 ' + textureFontSize + 'px ' + fontName;
-textInputEl.style.lineHeight = 1.1 * textureFontSize + 'px';
+textInputEl.style.lineHeight = 0.9 * textureFontSize + 'px';
 
 // 3D scene related globals
 let scene, camera, renderer, textCanvas, textCtx, particleGeometry, dummy, clock, cursorMesh;
 let flowerInstancedMesh, leafInstancedMesh, flowerMaterial, leafMaterial;
 
 // String to show
-let string = 'or maybe<div>with</div><div>flowers?</div>';
+let string = 'Blossom';
 
 // Coordinates data per 2D canvas and 3D scene
 let textureCoordinates = [];
@@ -89,8 +89,8 @@ function init() {
     dummy = new THREE.Object3D();
     clock = new THREE.Clock();
 
-    const cursorGeometry = new THREE.BoxGeometry(.09, 6, .03);
-    cursorGeometry.translate(0, -2.7, 0)
+    const cursorGeometry = new THREE.BoxGeometry(.09, 6.5, .03);
+    cursorGeometry.translate(0, -4.4, 0)
     const cursorMaterial = new THREE.MeshBasicMaterial({
         color: 0x000000,
         transparent: true,
