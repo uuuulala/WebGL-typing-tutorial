@@ -12,11 +12,6 @@
 	--color-link-hover: #333;
 }
 
-body #cdawrap {
-	align-self: center;
-	justify-self: start;
-}
-
 body {
 	margin: 0;
 	color: var(--color-text);
@@ -137,7 +132,7 @@ a:focus-visible {
 	text-transform: uppercase;
 	display: grid;
 	grid-gap: 1rem;
-	grid-template-areas: 'title' 'links' 'sponsor' 'demos';
+	grid-template-areas: 'title' 'links' 'demos' 'demos';
 }
 
 .frame a {
@@ -208,13 +203,12 @@ a:focus-visible {
 
 @media screen and (min-width: 53em) {
 	.frame {
-		grid-template-areas: 'title links' 'demos sponsor';
+		grid-template-areas: 'title links' 'demos demos';
 		align-content: space-between;
 		height: 100%;
 		grid-gap: 0;
 	}
-	.frame__links,
-	body #cdawrap {
+	.frame__links {
 		justify-self: end;
 	}
 	.content {
