@@ -5,7 +5,7 @@
 }
 
 :root {
-	font-size: 16px;
+	font-size: 13px;
 	--color-text: #111;
 	--color-bg: #fff;
 	--color-link: #000;
@@ -19,6 +19,22 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.demo-1 {
+	background-color: #a6ccf2;
+}
+
+.demo-2 {
+	background-color: #9d74c1;
+}
+
+.demo-3 {
+	background-color: #eef3c7;
+}
+
+.demo-4 {
+	background-color: #FF8796;
 }
 
 /* Page Loader */
@@ -58,7 +74,7 @@ body {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: var(--color-link);
 	outline: none;
 	cursor: pointer;
@@ -67,6 +83,7 @@ a {
 a:hover {
 	color: var(--color-link-hover);
 	outline: none;
+	text-decoration: none;
 }
 
 /* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
@@ -107,53 +124,58 @@ a:focus-visible {
 .frame {
 	position: fixed;
 	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 95%;
-	max-width: 1200px;
-	z-index: 1;
-}
-
-.frame a:not(.frame__title-back) {
-	white-space: nowrap;
-	overflow: hidden;
-	position: relative;
-	display: inline-block;
-}
-
-.frame__title-links-wrap {
+	left: 0;
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
-}
-.frame__title {
-	font-size: 1.5rem;
-	margin: 2rem 0;
+	padding: 2rem; 
+	z-index: 1;
+	pointer-events: none;
+	text-transform: uppercase;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-areas: 'title' 'links' 'demos' 'demos';
 }
 
-.frame__title-main {
-	font-size: 1rem;
+.frame a {
+	pointer-events: auto;
+}
+
+.frame__title {
 	margin: 0;
 	font-weight: normal;
+	font-size: 1rem;
+	grid-area: title;
 }
 
-.frame__title-back {
-	position: relative;
+.frame__links,
+.frame__demos {
 	display: flex;
-	align-items: flex-end;
-	margin-bottom: 0.15rem;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
 }
 
-.frame__title-back span {
-	display: none;
+.frame__links {
+	grid-area: links;
 }
 
-.frame__title-back svg {
-	fill: currentColor;
+.frame__demos {
+	grid-area: demos;
 }
 
-.frame__prev {
-	grid-area: prev;
+.frame__demo {
+	background: rgba(255,255,255,0.4);
+	border: 1px solid black;
+	padding: 0.2rem 1rem;
+	border-radius: 5px;
+	text-decoration: none;
+	line-height: 2;
+	white-space: nowrap;
+}
+
+.frame__demo--current,
+.frame__demo:hover {
+	color: var(--color-link-hover);
+	background: white;
 }
 
 .content {
@@ -165,38 +187,32 @@ a:focus-visible {
 	align-items: center;
 }
 
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#text-input {
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
 @media screen and (min-width: 53em) {
+	.frame {
+		grid-template-areas: 'title links' 'demos demos';
+		align-content: space-between;
+		height: 100%;
+		grid-gap: 0;
+	}
+	.frame__links {
+		justify-self: end;
+	}
 	.content {
 		height: 100vh;
 		justify-content: center;
 	}
-}
-
-.frame__title-wrap {
-	opacity: .5;
-}
-.frame__links,
-.frame__demos {
-	display: flex;
-	align-items: center;
-	justify-content: end;
-}
-.frame__links > a {
-	margin: 1em;
-	text-decoration: underline;
-}
-.frame__demos > a {
-	margin: 0 0 0 1em;
-}
-.frame__demo {
-	color: #ffffff;
-	background-color: rgba(0, 0, 0, .3);
-	border: 1px solid rgba(0, 0, 0, .3);
-	padding: .2rem .8rem;
-	border-radius: 1.5rem;
-	transition: all .15s ease-in-out;
-}
-.frame__demo--current {
-	color: var(--color-link-hover);
-	background-color: rgba(255, 255, 255, .3);
 }
